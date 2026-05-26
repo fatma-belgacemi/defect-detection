@@ -24,4 +24,4 @@ def draw_results(frame,defects):
    x,y,w,h=cv2.boundingRect(cnt)
    cv2.rectangle(result,(x,y),(x+w,y+h),color,2)
    cv2.putText(result,status,(20,40),cv2.FONT_HERSHEY_SIMPLEX,1.2,color,3)
-  return result,status
+ return result,status

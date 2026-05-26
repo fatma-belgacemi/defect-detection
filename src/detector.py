@@ -14,7 +14,7 @@ def run():
   if not ret:
    break
   defects = detect_defects(frame)
-  result, status = draw_results(frame, defects)
+  result,status = draw_results(frame,defects)
   if status == "ok":
    ok_count += 1
   else:
