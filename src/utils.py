@@ -2,7 +2,9 @@ import cv2
 def preprocess(frame):
  gray=cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
  blurred=cv2.GaussianBlur(gray,(5,5),0)
- return blurred
+ kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 3))
+ closed = cv2.morphologyEx(blurred, cv2.MORPH_CLOSE, kernel)
+ return closed
 def detect_defects(frame,min_area=500):
  processed=preprocess(frame)
  edges=cv2.Canny(processed,50,150)
